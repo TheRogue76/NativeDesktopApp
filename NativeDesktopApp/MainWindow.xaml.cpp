@@ -3,6 +3,8 @@
 #if __has_include("MainWindow.g.cpp")
 #include "MainWindow.g.cpp"
 #endif
+#include "Views/HomePage.h"
+#include "Views/SettingsPage.h"
 
 using namespace winrt;
 using namespace Microsoft::UI::Xaml;
@@ -20,42 +22,8 @@ namespace winrt::NativeDesktopApp::implementation
         Pivot pivot;
         pivot.Margin(ThicknessHelper::FromUniformLength(16));
 
-        PivotItem homeTab;
-        homeTab.Header(box_value(L"Home"));
-        StackPanel homePanel;
-        homePanel.Spacing(12);
-        TextBlock homeTitle;
-        homeTitle.Text(L"Home");
-        homeTitle.FontSize(24);
-        TextBlock homeSubtitle;
-        homeSubtitle.Text(L"Welcome to the app.");
-        Button homeAction;
-        homeAction.Content(box_value(L"Primary action"));
-        homePanel.Children().Append(homeTitle);
-        homePanel.Children().Append(homeSubtitle);
-        homePanel.Children().Append(homeAction);
-        homeTab.Content(homePanel);
-
-        PivotItem settingsTab;
-        settingsTab.Header(box_value(L"Settings"));
-        StackPanel settingsPanel;
-        settingsPanel.Spacing(12);
-        TextBlock settingsTitle;
-        settingsTitle.Text(L"Settings");
-        settingsTitle.FontSize(24);
-        ToggleSwitch settingToggle;
-        settingToggle.Header(box_value(L"Enable feature"));
-        ComboBox settingOptions;
-        settingOptions.PlaceholderText(L"Choose an option");
-        settingOptions.Items().Append(box_value(L"Option A"));
-        settingOptions.Items().Append(box_value(L"Option B"));
-        settingsPanel.Children().Append(settingsTitle);
-        settingsPanel.Children().Append(settingToggle);
-        settingsPanel.Children().Append(settingOptions);
-        settingsTab.Content(settingsPanel);
-
-        pivot.Items().Append(homeTab);
-        pivot.Items().Append(settingsTab);
+        pivot.Items().Append(views::HomePage::Create());
+        pivot.Items().Append(views::SettingsPage::Create());
 
         Content(pivot);
     }

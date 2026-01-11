@@ -126,6 +126,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="MainWindow.xaml.h" />
+    <ClInclude Include="Views\HomePage.h" />
+    <ClInclude Include="Views\SettingsPage.h" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
@@ -138,6 +140,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="MainWindow.xaml.cpp" />
+    <ClCompile Include="Views\HomePage.cpp" />
+    <ClCompile Include="Views\SettingsPage.cpp" />
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
   </ItemGroup>
   <ItemGroup>

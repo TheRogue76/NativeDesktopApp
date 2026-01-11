@@ -9,9 +9,21 @@
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="Views\HomePage.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="Views\SettingsPage.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Views\HomePage.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="Views\SettingsPage.h">
+      <Filter>Views</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
@@ -39,6 +51,9 @@
   <ItemGroup>
     <Filter Include="Assets">
       <UniqueIdentifier>{72c875a1-d739-4dc8-ab44-c5e461926a92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views">
+      <UniqueIdentifier>{b77a9f2e-2a9e-4c8c-9d2a-046740f3fb1d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
