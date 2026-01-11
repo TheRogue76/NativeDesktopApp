@@ -31,12 +31,20 @@ namespace winrt::NativeDesktopApp::implementation
 #endif
     }
 
+    void App::InitializeComponent()
+    {
+        // Base Application initialization only - do not access Resources() here
+    }
+
     /// <summary>
     /// Invoked when the application is launched.
     /// </summary>
     /// <param name="e">Details about the launch request and process.</param>
     void App::OnLaunched([[maybe_unused]] LaunchActivatedEventArgs const& e)
     {
+        // Now it's safe to access Resources() - the base Application is fully initialized
+        Resources().MergedDictionaries().Append(Microsoft::UI::Xaml::Controls::XamlControlsResources());
+
         window = make<MainWindow>();
         window.Activate();
     }

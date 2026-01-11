@@ -8,6 +8,7 @@ namespace winrt::NativeDesktopApp::implementation
     {
         App();
 
+        void InitializeComponent();
         void OnLaunched(Microsoft::UI::Xaml::LaunchActivatedEventArgs const&);
 
     private:
