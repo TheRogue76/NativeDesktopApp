@@ -3,6 +3,7 @@
 ## Project Structure & Module Organization
 - `NativeDesktopApp.slnx` is the solution entry point for Visual Studio/MSBuild.
 - `NativeDesktopApp/` contains the WinUI 3 app sources (XAML + C++/WinRT).
+- `NativeDesktopApp/Views/` holds code-only UI screens (e.g., `HomePage`, `SettingsPage`).
 - `NativeDesktopApp/Assets/` holds app icons and splash images used by `Package.appxmanifest`.
 - `NativeDesktopApp/Generated Files/` contains build-generated headers/sources from IDL/XAML; do not edit by hand.
 - `packages/` contains NuGet packages restored for the project.
@@ -15,7 +16,7 @@
 
 ## Coding Style & Naming Conventions
 - C++ style: 4-space indentation, braces on the next line, and namespaces like `winrt::NativeDesktopApp::implementation`.
-- XAML + code-behind follow paired naming: `MainWindow.xaml`, `MainWindow.xaml.h`, `MainWindow.xaml.cpp`.
+- XAML is kept minimal; most layout lives in code within `Views/` classes.
 - Public WinRT types use PascalCase; methods follow PascalCase in IDL and C++/WinRT projections.
 - Keep `pch.h`/`pch.cpp` updated when adding commonly-used headers.
 
